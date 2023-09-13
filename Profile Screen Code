@@ -1,0 +1,195 @@
+import { Button, Icon, Image, makeStyles, Text } from "@rneui/themed";
+import { SafeAreaView, View } from "react-native";
+
+const ProfileScreen: React.FC = () => {
+    const styles = useStyles();
+
+    return (
+        <SafeAreaView style={styles.mainContainer}>
+            <View style={styles.innerContainer}>
+                <View style={styles.mainComponents}>
+                    <Image
+                        style={styles.icon}
+                        source={require("../../../../assets/person.jpeg")}
+                    />
+                    <View style={styles.textArea}>
+                        <Text style={styles.textA}>John Dean</Text>
+                        <View style={styles.innerTextArea}>
+                            <Text style={styles.textB}>AVOPC4536Q</Text>
+                            <View style={styles.dotStyle}>
+                                <Image
+                                    style={styles.dot}
+                                    source={require("../../../../assets/verified.png")}
+                                />
+                                <Text style={styles.textB}>KYC Verified</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+                <View style={styles.nestedContainer}>
+                    <View style={styles.nestedComponents}>
+                        <Text style={styles.accountOverviewText}>Account Overview</Text>
+                    </View>
+                    <View style={styles.myProfileTextArea}>
+                        <Button type="clear" buttonStyle={styles.buttonStyle}>
+                            <View style={styles.myProfilestyle}>
+                                <Image
+                                    source={require("../../../../assets/myprofile.png")}
+                                    style={styles.arrowIcon}
+                                />
+                                <Text style={styles.myProfileText}>My Profile</Text>
+                                <View style={styles.myProfileIconArea}>
+                                    <Icon
+                                        name="chevron-right"
+                                        type="entypo"
+                                        color="#000000"
+                                        size={20}
+                                    />
+                                </View>
+                            </View>
+                        </Button>
+                        <Button type="clear" buttonStyle={styles.buttonStyle}>
+                            <View style={styles.changePasswordStyle}>
+                                <Image
+                                    source={require("../../../../assets/password.png")}
+                                    style={styles.arrowIcon}
+                                />
+                                <Text style={styles.myProfileText}>Change Password</Text>
+                                <View style={styles.changePasswordIconArea}>
+                                    <Icon
+                                        name="chevron-right"
+                                        type="entypo"
+                                        color="#000000"
+                                        size={20}
+                                    />
+                                </View>
+                            </View>
+                        </Button>
+                        <Button type="clear" buttonStyle={styles.buttonStyle}>
+                            <View style={styles.logoutArea}>
+                                <Image
+                                    source={require("../../../../assets/logout.png")}
+                                    style={styles.image}
+                                />
+                                <Text style={styles.myProfileText}>Logout</Text>
+                            </View>
+                        </Button>
+                    </View>
+                </View>
+            </View>
+        </SafeAreaView>
+    );
+};
+
+const useStyles = makeStyles((theme) => ({
+    mainContainer: {
+        backgroundColor: theme.colors.primary,
+        flex: 1,
+    },
+    nestedContainer: {
+        paddingHorizontal: 30,
+        paddingTop: 25,
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40,
+        backgroundColor: "#FFFFFF",
+        flex: 2,
+    },
+    innerContainer: {
+        flex: 1,
+    },
+    mainComponents: {
+        flex: 1,
+        alignItems: "center",
+    },
+    icon: {
+        width: 126,
+        height: 126,
+        borderRadius: 60,
+        resizeMode: "cover",
+    },
+    textArea: {
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22,
+    },
+    textA: {
+        color: "#FFFFFF",
+        fontSize: 16,
+    },
+    innerTextArea: {
+        flexDirection: "row",
+        marginTop: 10,
+    },
+    textB: {
+        color: "#FFFFFF",
+        fontSize: 10,
+    },
+    dotStyle: {
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "row",
+        marginLeft: 10,
+    },
+    dot: {
+        width: 8,
+        height: 8,
+        resizeMode: "contain",
+        marginRight: 5,
+    },
+    nestedComponents: {
+        marginBottom: 10,
+    },
+    accountOverviewText: {
+        fontSize: 16,
+        color: theme.appColors.smokyBlack,
+    },
+    myProfileTextArea: {
+        alignItems: "flex-start",
+        marginTop: 20,
+        rowGap: 20,
+    },
+    myProfileText: {
+        fontSize: 14,
+        color: "#000000",
+    },
+    arrowIcon: {
+        width: 40,
+        height: 40,
+        marginRight: 15,
+    },
+    myProfilestyle: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    myProfileIconArea: {
+        flex: 1,
+        alignItems: "flex-end",
+    },
+    changePasswordStyle: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    changePasswordIconArea: {
+        flex: 1,
+        alignItems: "flex-end",
+    },
+    logoutArea: {
+        flexDirection: "row",
+        alignItems: "center",
+        width: "100%",
+    },
+    image: {
+        width: 40,
+        height: 40,
+        marginRight: 15,
+    },
+    buttonStyle: {
+        paddingVertical: 0,
+        paddingHorizontal: 0,
+    },
+}));
+
+export default ProfileScreen;
+
